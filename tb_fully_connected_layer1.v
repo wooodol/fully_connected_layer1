@@ -239,7 +239,7 @@ wire valid_out_fc1;
     data_in_125 = 0; data_in_126 = 0; data_in_127 = 0; data_in_128 = 0;
 
     // Wait for reset to complete
-    #20;
+    #25;
     // Start the test
     valid_in = 1;
 
@@ -286,43 +286,43 @@ end
   
   initial begin
     $monitor("Time: %0t | valid_out_fc: %b | fa_a: %h | fa_sum: %h | clk: %b | state: %b | buf_idx: %h | r: %b | fa_valid: %b | fm_valid: %b | sum_idx: %h | data_out_num: %h ",
-           $time, valid_out_fc, fa_a, fa_sum, clk, state, buf_idx, r, fm_valid, fa_valid, sum_idx, data_out_num);    
-           $monitor("fm_a:%h|fm_b:%h ",fm_a,fm_b);
-           $monitor("data_out:%h", data_out);
-           $monitor("data_out_2:%h", data_out_2);
-           $monitor("data_out_3:%h", data_out_3);
-           $monitor("data_out_4:%h", data_out_4);
-           $monitor("data_out_5:%h", data_out_5);
-           $monitor("data_out_6:%h", data_out_6);
-           $monitor("data_out_7:%h", data_out_7);
-           $monitor("data_out_8:%h", data_out_8);
-           $monitor("data_out_9:%h", data_out_9);
-           $monitor("data_out_10:%h", data_out_10);
-           $monitor("data_out_11:%h", data_out_11);
-           $monitor("data_out_12:%h", data_out_12);
-           $monitor("data_out_13:%h", data_out_13);
-           $monitor("data_out_14:%h", data_out_14);
-           $monitor("data_out_15:%h", data_out_15);
-           $monitor("data_out_16:%h", data_out_16);
-           $monitor("data_out_17:%h", data_out_17);
-           $monitor("data_out_18:%h", data_out_18);
-           $monitor("data_out_19:%h", data_out_19);
-           $monitor("data_out_20:%h", data_out_20);
-           $monitor("data_out_21:%h", data_out_21);
-           $monitor("data_out_22:%h", data_out_22);
-           $monitor("data_out_23:%h", data_out_23);
-           $monitor("data_out_24:%h", data_out_24);
-           $monitor("data_out_25:%h", data_out_25);
-           $monitor("data_out_26:%h", data_out_26);
-           $monitor("data_out_27:%h", data_out_27);
-           $monitor("data_out_28:%h", data_out_28);
-           $monitor("data_out_29:%h", data_out_29);
-           $monitor("data_out_30:%h", data_out_30);
-           $monitor("data_out_31:%h", data_out_31);
-           $monitor("data_out_32:%h", data_out_32);
+             $time, valid_out_fc, fa_a, fa_sum, clk, state, buf_idx, r, fm_valid, fa_valid, sum_idx, data_out_num);    
+             $monitor("fm_a:%h|fm_b:%h ",fm_a,fm_b);
+             $monitor("data_out:%h", data_out);
+$monitor("data_out_2:%h", data_out_2);
+$monitor("data_out_3:%h", data_out_3);
+$monitor("data_out_4:%h", data_out_4);
+$monitor("data_out_5:%h", data_out_5);
+$monitor("data_out_6:%h", data_out_6);
+$monitor("data_out_7:%h", data_out_7);
+$monitor("data_out_8:%h", data_out_8);
+$monitor("data_out_9:%h", data_out_9);
+$monitor("data_out_10:%h", data_out_10);
+$monitor("data_out_11:%h", data_out_11);
+$monitor("data_out_12:%h", data_out_12);
+$monitor("data_out_13:%h", data_out_13);
+$monitor("data_out_14:%h", data_out_14);
+$monitor("data_out_15:%h", data_out_15);
+$monitor("data_out_16:%h", data_out_16);
+$monitor("data_out_17:%h", data_out_17);
+$monitor("data_out_18:%h", data_out_18);
+$monitor("data_out_19:%h", data_out_19);
+$monitor("data_out_20:%h", data_out_20);
+$monitor("data_out_21:%h", data_out_21);
+$monitor("data_out_22:%h", data_out_22);
+$monitor("data_out_23:%h", data_out_23);
+$monitor("data_out_24:%h", data_out_24);
+$monitor("data_out_25:%h", data_out_25);
+$monitor("data_out_26:%h", data_out_26);
+$monitor("data_out_27:%h", data_out_27);
+$monitor("data_out_28:%h", data_out_28);
+$monitor("data_out_29:%h", data_out_29);
+$monitor("data_out_30:%h", data_out_30);
+$monitor("data_out_31:%h", data_out_31);
+$monitor("data_out_32:%h", data_out_32);
 
-           $monitor("data_out_final: %h", data_out_final); 
-           $monitor("valid_out_fc1: %b",valid_out_fc1);     
+             $monitor("data_out_final: %h", data_out_final); 
+             $monitor("valid_out_fc1: %b",valid_out_fc1);     
   end
   
 
