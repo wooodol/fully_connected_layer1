@@ -436,14 +436,15 @@ module fully_connected #(parameter INPUT_NUM = 1536, OUTPUT_NUM = 512, DATA_BITS
    output wire [DATA_BITS-1:0] fm_z_32,
    output reg fm_valid_32,
    output reg fa_valid_32,
-   output reg [10:0] sum_idx_32
+   output reg [10:0] sum_idx_32,
+   output reg [DATA_BITS-1:0] buffer [0:INPUT_NUM - 1]
 );//입출력 포트 정의
 
 localparam INPUT_WIDTH = 12;
 localparam INPUT_NUM_DATA_BITS = 11;//파라미터 정의
 
 reg [31:0] data_out_buffer [0:511];
-reg [DATA_BITS-1:0] buffer [0:INPUT_NUM - 1];
+
 reg [DATA_BITS-1:0] weight [0:INPUT_NUM * OUTPUT_NUM - 1];
 reg [DATA_BITS-1:0] bias [0:OUTPUT_NUM - 1];
 integer i;
@@ -608,6 +609,7 @@ wire fa_valid_d_32;
 wire fm_valid_d_32;
 reg q_32,w_32,t_32;
 
+reg delay;
 
 initial begin
    $readmemh("E:/Xilinx/project_7/project_7.srcs/sources_1/new/fc1_weight_16.txt", weight); 
@@ -3410,6 +3412,10 @@ end
     if(i == 511) begin
         state <= 0;
         i <= 0;
+        delay <= 1;
+    end
+    if(delay) begin
+        delay <= 0;
         valid_out_fc1 <= 0;
     end
 end
